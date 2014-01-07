@@ -1,0 +1,231 @@
+["<?xml version=\"1.0\"?>\r\n", "\r\n", "\t\t<bustime-response>\t\r\n", "\t\t\t\r\n", "\t\t\t\t<prd>\r\n", "\t\t\t\t\t<tmstmp>20131231 09:24</tmstmp>\r\n", "\t\t\t\t\t<typ>A</typ>\r\n", "\t\t\t\t\t<stpnm>Damen &amp; Eastwood (Brown Line)</stpnm>\r\n", "\t\t\t\t\t<stpid>4954</stpid>\r\n", "\t\t\t\t\t<vid>1376</vid>\r\n", "\t\t\t\t\t\r\n", "\t\t\t\t\t \t\t\t\t\t\r\n", "\t\t\t\t\t<dstp>501</dstp>\r\n", "\t\t\t\t\t<rt>50</rt>\r\n", "\t\t\t\t\t<rtdir>Northbound</rtdir>\r\n", "\t\t        \t<des>Ashland/Clark</des>\r\n", "\t\t        \t<prdtm>20131231 09:25</prdtm>\r\n", "\t\t        \t\r\n", "\t\t\t\t</prd>\t\t\t\r\n", "\t\t\t\r\n", "\t\t\t\t<prd>\r\n", "\t\t\t\t\t<tmstmp>20131231 09:24</tmstmp>\r\n", "\t\t\t\t\t<typ>A</typ>\r\n", "\t\t\t\t\t<stpnm>Damen &amp; Argyle</stpnm>\r\n", "\t\t\t\t\t<stpid>8816</stpid>\r\n", "\t\t\t\t\t<vid>1413</vid>\r\n", "\t\t\t\t\t\r\n", "\t\t\t\t\t \t\t\t\t\t\r\n", "\t\t\t\t\t<dstp>945</dstp>\r\n", "\t\t\t\t\t<rt>50</rt>\r\n", "\t\t\t\t\t<rtdir>Southbound</rtdir>\r\n", "\t\t        \t<des>35th/Archer Orange Line</des>\r\n", "\t\t        \t<prdtm>20131231 09:26</prdtm>\r\n", "\t\t        \t\r\n", "\t\t\t\t</prd>\t\t\t\r\n", "\t\t\t\r\n", "\t\t\t\t<prd>\r\n", "\t\t\t\t\t<tmstmp>20131231 09:24</tmstmp>\r\n", "\t\t\t\t\t<typ>A</typ>\r\n", "\t\t\t\t\t<stpnm>Damen &amp; Irving Park/Lincoln</stpnm>\r\n", "\t\t\t\t\t<stpid>8951</stpid>\r\n", "\t\t\t\t\t<vid>1780</vid>\r\n", "\t\t\t\t\t\r\n", "\t\t\t\t\t \t\t\t\t\t\r\n", "\t\t\t\t\t<dstp>2106</dstp>\r\n", "\t\t\t\t\t<rt>50</rt>\r\n", "\t\t\t\t\t<rtdir>Northbound</rtdir>\r\n", "\t\t        \t<des>Ashland/Clark</des>\r\n", "\t\t        \t<prdtm>20131231 09:27</prdtm>\r\n", "\t\t        \t\r\n", "\t\t\t\t</prd>\t\t\t\r\n", "\t\t\t\r\n", "\t\t\t\t<prd>\r\n", "\t\t\t\t\t<tmstmp>20131231 09:24</tmstmp>\r\n", "\t\t\t\t\t<typ>A</typ>\r\n", "\t\t\t\t\t<stpnm>Damen &amp; Eastwood (Brown Line)</stpnm>\r\n", "\t\t\t\t\t<stpid>8819</stpid>\r\n", "\t\t\t\t\t<vid>1413</vid>\r\n", "\t\t\t\t\t\r\n", "\t\t\t\t\t \t\t\t\t\t\r\n", "\t\t\t\t\t<dstp>3282</dstp>\r\n", "\t\t\t\t\t<rt>50</rt>\r\n", "\t\t\t\t\t<rtdir>Southbound</rtdir>\r\n", "\t\t        \t<des>35th/Archer Orange Line</des>\r\n", "\t\t        \t<prdtm>20131231 09:29</prdtm>\r\n", "\t\t        \t\r\n", "\t\t\t\t</prd>\t\t\t\r\n", "\t\t\t\r\n", "\t\t\t\t<prd>\r\n", "\t\t\t\t\t<tmstmp>20131231 09:24</tmstmp>\r\n", "\t\t\t\t\t<typ>A</typ>\r\n", "\t\t\t\t\t<stpnm>Damen &amp; Montrose</stpnm>\r\n", "\t\t\t\t\t<stpid>8955</stpid>\r\n", "\t\t\t\t\t<vid>1780</vid>\r\n", "\t\t\t\t\t\r\n", "\t\t\t\t\t \t\t\t\t\t\r\n", "\t\t\t\t\t<dstp>4556</dstp>\r\n", "\t\t\t\t\t<rt>50</rt>\r\n", "\t\t\t\t\t<rtdir>Northbound</rtdir>\r\n", "\t\t        \t<des>Ashland/Clark</des>\r\n", "\t\t        \t<prdtm>20131231 09:30</prdtm>\r\n", "\t\t        \t\r\n", "\t\t\t\t</prd>\t\t\t\r\n", "\t\t\t\r\n", "\t\t\t\t<prd>\r\n", "\t\t\t\t\t<tmstmp>20131231 09:24</tmstmp>\r\n", "\t\t\t\t\t<typ>A</typ>\r\n", "\t\t\t\t\t<stpnm>Damen &amp; Eastwood (Brown Line)</stpnm>\r\n", "\t\t\t\t\t<stpid>4954</stpid>\r\n", "\t\t\t\t\t<vid>1780</vid>\r\n", "\t\t\t\t\t\r\n", "\t\t\t\t\t \t\t\t\t\t\r\n", "\t\t\t\t\t<dstp>6384</dstp>\r\n", "\t\t\t\t\t<rt>50</rt>\r\n", "\t\t\t\t\t<rtdir>Northbound</rtdir>\r\n", "\t\t        \t<des>Ashland/Clark</des>\r\n", "\t\t        \t<prdtm>20131231 09:32</prdtm>\r\n", "\t\t        \t\r\n", "\t\t\t\t</prd>\t\t\t\r\n", "\t\t\t\r\n", "\t\t\t\t<prd>\r\n", "\t\t\t\t\t<tmstmp>20131231 09:24</tmstmp>\r\n", "\t\t\t\t\t<typ>A</typ>\r\n", "\t\t\t\t\t<stpnm>Damen &amp; Belmont</stpnm>\r\n", "\t\t\t\t\t<stpid>8942</stpid>\r\n", "\t\t\t\t\t<vid>1310</vid>\r\n", "\t\t\t\t\t\r\n", "\t\t\t\t\t \t\t\t\t\t\r\n", "\t\t\t\t\t<dstp>10747</dstp>\r\n", "\t\t\t\t\t<rt>50</rt>\r\n", "\t\t\t\t\t<rtdir>Northbound</rtdir>\r\n", "\t\t        \t<des>Ashland/Clark</des>\r\n", "\t\t        \t<prdtm>20131231 09:36</prdtm>\r\n", "\t\t        \t\r\n", "\t\t\t\t</prd>\t\t\t\r\n", "\t\t\t\r\n", "\t\t\t\t<prd>\r\n", "\t\t\t\t\t<tmstmp>20131231 09:24</tmstmp>\r\n", "\t\t\t\t\t<typ>A</typ>\r\n", "\t\t\t\t\t<stpnm>Clark &amp; Bryn Mawr</stpnm>\r\n", "\t\t\t\t\t<stpid>1802</stpid>\r\n", "\t\t\t\t\t<vid>1911</vid>\r\n", "\t\t\t\t\t\r\n", "\t\t\t\t\t \t\t\t\t\t\r\n", "\t\t\t\t\t<dstp>934</dstp>\r\n", "\t\t\t\t\t<rt>50</rt>\r\n", "\t\t\t\t\t<rtdir>Southbound</rtdir>\r\n", "\t\t        \t<des>35th/Archer Orange Line</des>\r\n", "\t\t        \t<prdtm>20131231 09:36</prdtm>\r\n", "\t\t        \t\r\n", "\t\t\t\t</prd>\t\t\t\r\n", "\t\t\t\r\n", "\t\t\t\t<prd>\r\n", "\t\t\t\t\t<tmstmp>20131231 09:24</tmstmp>\r\n", "\t\t\t\t\t<typ>A</typ>\r\n", "\t\t\t\t\t<stpnm>Damen &amp; Irving Park/Lincoln</stpnm>\r\n", "\t\t\t\t\t<stpid>8951</stpid>\r\n", "\t\t\t\t\t<vid>1310</vid>\r\n", "\t\t\t\t\t\r\n", "\t\t\t\t\t \t\t\t\t\t\r\n", "\t\t\t\t\t<dstp>16290</dstp>\r\n", "\t\t\t\t\t<rt>50</rt>\r\n", "\t\t\t\t\t<rtdir>Northbound</rtdir>\r\n", "\t\t        \t<des>Ashland/Clark</des>\r\n", "\t\t        \t<prdtm>20131231 09:43</prdtm>\r\n", "\t\t        \t\r\n", "\t\t\t\t</prd>\t\t\t\r\n", "\t\t\t\r\n", "\t\t\t\t<prd>\r\n", "\t\t\t\t\t<tmstmp>20131231 09:24</tmstmp>\r\n", "\t\t\t\t\t<typ>A</typ>\r\n", "\t\t\t\t\t<stpnm>Damen &amp; Belmont</stpnm>\r\n", "\t\t\t\t\t<stpid>8942</stpid>\r\n", "\t\t\t\t\t<vid>1322</vid>\r\n", "\t\t\t\t\t\r\n", "\t\t\t\t\t \t\t\t\t\t\r\n", "\t\t\t\t\t<dstp>15492</dstp>\r\n", "\t\t\t\t\t<rt>50</rt>\r\n", "\t\t\t\t\t<rtdir>Northbound</rtdir>\r\n", "\t\t        \t<des>Ashland/Clark</des>\r\n", "\t\t        \t<prdtm>20131231 09:43</prdtm>\r\n", "\t\t        \t\r\n", "\t\t\t\t</prd>\t\t\t\r\n", "\t\t\t\r\n", "\t\t\t\t<prd>\r\n", "\t\t\t\t\t<tmstmp>20131231 09:24</tmstmp>\r\n", "\t\t\t\t\t<typ>A</typ>\r\n", "\t\t\t\t\t<stpnm>Damen &amp; Argyle</stpnm>\r\n", "\t\t\t\t\t<stpid>8816</stpid>\r\n", "\t\t\t\t\t<vid>1911</vid>\r\n", "\t\t\t\t\t\r\n", "\t\t\t\t\t \t\t\t\t\t\r\n", "\t\t\t\t\t<dstp>7776</dstp>\r\n", "\t\t\t\t\t<rt>50</rt>\r\n", "\t\t\t\t\t<rtdir>Southbound</rtdir>\r\n", "\t\t        \t<des>35th/Archer Orange Line</des>\r\n", "\t\t        \t<prdtm>20131231 09:43</prdtm>\r\n", "\t\t        \t\r\n", "\t\t\t\t</prd>\t\t\t\r\n", "\t\t\t\r\n", "\t\t\t\t<prd>\r\n", "\t\t\t\t\t<tmstmp>20131231 09:24</tmstmp>\r\n", "\t\t\t\t\t<typ>A</typ>\r\n", "\t\t\t\t\t<stpnm>Damen &amp; Montrose</stpnm>\r\n", "\t\t\t\t\t<stpid>8955</stpid>\r\n", "\t\t\t\t\t<vid>1310</vid>\r\n", "\t\t\t\t\t\r\n", "\t\t\t\t\t \t\t\t\t\t\r\n", "\t\t\t\t\t<dstp>18740</dstp>\r\n", "\t\t\t\t\t<rt>50</rt>\r\n", "\t\t\t\t\t<rtdir>Northbound</rtdir>\r\n", "\t\t        \t<des>Ashland/Clark</des>\r\n", "\t\t        \t<prdtm>20131231 09:45</prdtm>\r\n", "\t\t        \t\r\n", "\t\t\t\t</prd>\t\t\t\r\n", "\t\t\t\r\n", "\t\t\t\t<prd>\r\n", "\t\t\t\t\t<tmstmp>20131231 09:24</tmstmp>\r\n", "\t\t\t\t\t<typ>A</typ>\r\n", "\t\t\t\t\t<stpnm>Damen &amp; Eastwood (Brown Line)</stpnm>\r\n", "\t\t\t\t\t<stpid>8819</stpid>\r\n", "\t\t\t\t\t<vid>1911</vid>\r\n", "\t\t\t\t\t\r\n", "\t\t\t\t\t \t\t\t\t\t\r\n", "\t\t\t\t\t<dstp>10113</dstp>\r\n", "\t\t\t\t\t<rt>50</rt>\r\n", "\t\t\t\t\t<rtdir>Southbound</rtdir>\r\n", "\t\t        \t<des>35th/Archer Orange Line</des>\r\n", "\t\t        \t<prdtm>20131231 09:46</prdtm>\r\n", "\t\t        \t\r\n", "\t\t\t\t</prd>\t\t\t\r\n", "\t\t\t\r\n", "\t\t\t\t<prd>\r\n", "\t\t\t\t\t<tmstmp>20131231 09:24</tmstmp>\r\n", "\t\t\t\t\t<typ>A</typ>\r\n", "\t\t\t\t\t<stpnm>Damen &amp; Eastwood (Brown Line)</stpnm>\r\n", "\t\t\t\t\t<stpid>4954</stpid>\r\n", "\t\t\t\t\t<vid>1310</vid>\r\n", "\t\t\t\t\t\r\n", "\t\t\t\t\t \t\t\t\t\t\r\n", "\t\t\t\t\t<dstp>20568</dstp>\r\n", "\t\t\t\t\t<rt>50</rt>\r\n", "\t\t\t\t\t<rtdir>Northbound</rtdir>\r\n", "\t\t        \t<des>Ashland/Clark</des>\r\n", "\t\t        \t<prdtm>20131231 09:47</prdtm>\r\n", "\t\t        \t\r\n", "\t\t\t\t</prd>\t\t\t\r\n", "\t\t\t\r\n", "\t\t\t\t<prd>\r\n", "\t\t\t\t\t<tmstmp>20131231 09:24</tmstmp>\r\n", "\t\t\t\t\t<typ>A</typ>\r\n", "\t\t\t\t\t<stpnm>Damen &amp; Irving Park/Lincoln</stpnm>\r\n", "\t\t\t\t\t<stpid>8951</stpid>\r\n", "\t\t\t\t\t<vid>1322</vid>\r\n", "\t\t\t\t\t\r\n", "\t\t\t\t\t \t\t\t\t\t\r\n", "\t\t\t\t\t<dstp>21035</dstp>\r\n", "\t\t\t\t\t<rt>50</rt>\r\n", "\t\t\t\t\t<rtdir>Northbound</rtdir>\r\n", "\t\t        \t<des>Ashland/Clark</des>\r\n", "\t\t        \t<prdtm>20131231 09:49</prdtm>\r\n", "\t\t        \t\r\n", "\t\t\t\t</prd>\t\t\t\r\n", "\t\t\t\r\n", "\t\t\t\t<prd>\r\n", "\t\t\t\t\t<tmstmp>20131231 09:24</tmstmp>\r\n", "\t\t\t\t\t<typ>A</typ>\r\n", "\t\t\t\t\t<stpnm>Damen &amp; Montrose</stpnm>\r\n", "\t\t\t\t\t<stpid>8955</stpid>\r\n", "\t\t\t\t\t<vid>1322</vid>\r\n", "\t\t\t\t\t\r\n", "\t\t\t\t\t \t\t\t\t\t\r\n", "\t\t\t\t\t<dstp>23485</dstp>\r\n", "\t\t\t\t\t<rt>50</rt>\r\n", "\t\t\t\t\t<rtdir>Northbound</rtdir>\r\n", "\t\t        \t<des>Ashland/Clark</des>\r\n", "\t\t        \t<prdtm>20131231 09:52</prdtm>\r\n", "\t\t        \t\r\n", "\t\t\t\t</prd>\t\t\t\r\n", "\t\t\t\r\n", "\t\t\t\t<prd>\r\n", "\t\t\t\t\t<tmstmp>20131231 09:24</tmstmp>\r\n", "\t\t\t\t\t<typ>A</typ>\r\n", "\t\t\t\t\t<stpnm>Clark &amp; Bryn Mawr</stpnm>\r\n", "\t\t\t\t\t<stpid>1802</stpid>\r\n", "\t\t\t\t\t<vid>1780</vid>\r\n", "\t\t\t\t\t\r\n", "\t\t\t\t\t \t\t\t\t\t\r\n", "\t\t\t\t\t<dstp>17095</dstp>\r\n", "\t\t\t\t\t<rt>50</rt>\r\n", "\t\t\t\t\t<rtdir>Southbound</rtdir>\r\n", "\t\t        \t<des>35th/Archer Orange Line</des>\r\n", "\t\t        \t<prdtm>20131231 09:53</prdtm>\r\n", "\t\t        \t\r\n", "\t\t\t\t</prd>\t\t\t\r\n", "\r\n", "\t\t</bustime-response>\r\n", "\r\n", "\t\t\r\n"]["<?xml version=\"1.0\"?>\r\n", "\r\n", "\t\t<bustime-response>\t\r\n", "\t\t\t\r\n", "\t\t\t\t<prd>\r\n", "\t\t\t\t\t<tmstmp>20131231 09:26</tmstmp>\r\n", "\t\t\t\t\t<typ>A</typ>\r\n", "\t\t\t\t\t<stpnm>Damen &amp; Eastwood (Brown Line)</stpnm>\r\n", "\t\t\t\t\t<stpid>8819</stpid>\r\n", "\t\t\t\t\t<vid>1413</vid>\r\n", "\t\t\t\t\t\r\n", "\t\t\t\t\t \t\t\t\t\t\r\n", "\t\t\t\t\t<dstp>985</dstp>\r\n", "\t\t\t\t\t<rt>50</rt>\r\n", "\t\t\t\t\t<rtdir>Southbound</rtdir>\r\n", "\t\t        \t<des>35th/Archer Orange Line</des>\r\n", "\t\t        \t<prdtm>20131231 09:28</prdtm>\r\n", "\t\t        \t\r\n", "\t\t\t\t</prd>\t\t\t\r\n", "\t\t\t\r\n", "\t\t\t\t<prd>\r\n", "\t\t\t\t\t<tmstmp>20131231 09:26</tmstmp>\r\n", "\t\t\t\t\t<typ>A</typ>\r\n", "\t\t\t\t\t<stpnm>Damen &amp; Montrose</stpnm>\r\n", "\t\t\t\t\t<stpid>8955</stpid>\r\n", "\t\t\t\t\t<vid>1780</vid>\r\n", "\t\t\t\t\t\r\n", "\t\t\t\t\t \t\t\t\t\t\r\n", "\t\t\t\t\t<dstp>2772</dstp>\r\n", "\t\t\t\t\t<rt>50</rt>\r\n", "\t\t\t\t\t<rtdir>Northbound</rtdir>\r\n", "\t\t        \t<des>Ashland/Clark</des>\r\n", "\t\t        \t<prdtm>20131231 09:29</prdtm>\r\n", "\t\t        \t\r\n", "\t\t\t\t</prd>\t\t\t\r\n", "\t\t\t\r\n", "\t\t\t\t<prd>\r\n", "\t\t\t\t\t<tmstmp>20131231 09:26</tmstmp>\r\n", "\t\t\t\t\t<typ>A</typ>\r\n", "\t\t\t\t\t<stpnm>Damen &amp; Eastwood (Brown Line)</stpnm>\r\n", "\t\t\t\t\t<stpid>4954</stpid>\r\n", "\t\t\t\t\t<vid>1780</vid>\r\n", "\t\t\t\t\t\r\n", "\t\t\t\t\t \t\t\t\t\t\r\n", "\t\t\t\t\t<dstp>4600</dstp>\r\n", "\t\t\t\t\t<rt>50</rt>\r\n", "\t\t\t\t\t<rtdir>Northbound</rtdir>\r\n", "\t\t        \t<des>Ashland/Clark</des>\r\n", "\t\t        \t<prdtm>20131231 09:31</prdtm>\r\n", "\t\t        \t\r\n", "\t\t\t\t</prd>\t\t\t\r\n", "\t\t\t\r\n", "\t\t\t\t<prd>\r\n", "\t\t\t\t\t<tmstmp>20131231 09:26</tmstmp>\r\n", "\t\t\t\t\t<typ>A</typ>\r\n", "\t\t\t\t\t<stpnm>Clark &amp; Bryn Mawr</stpnm>\r\n", "\t\t\t\t\t<stpid>1802</stpid>\r\n", "\t\t\t\t\t<vid>1911</vid>\r\n", "\t\t\t\t\t\r\n", "\t\t\t\t\t \t\t\t\t\t\r\n", "\t\t\t\t\t<dstp>891</dstp>\r\n", "\t\t\t\t\t<rt>50</rt>\r\n", "\t\t\t\t\t<rtdir>Southbound</rtdir>\r\n", "\t\t        \t<des>35th/Archer Orange Line</des>\r\n", "\t\t        \t<prdtm>20131231 09:36</prdtm>\r\n", "\t\t        \t\r\n", "\t\t\t\t</prd>\t\t\t\r\n", "\t\t\t\r\n", "\t\t\t\t<prd>\r\n", "\t\t\t\t\t<tmstmp>20131231 09:26</tmstmp>\r\n", "\t\t\t\t\t<typ>A</typ>\r\n", "\t\t\t\t\t<stpnm>Damen &amp; Belmont</stpnm>\r\n", "\t\t\t\t\t<stpid>8942</stpid>\r\n", "\t\t\t\t\t<vid>1310</vid>\r\n", "\t\t\t\t\t\r\n", "\t\t\t\t\t \t\t\t\t\t\r\n", "\t\t\t\t\t<dstp>8547</dstp>\r\n", "\t\t\t\t\t<rt>50</rt>\r\n", "\t\t\t\t\t<rtdir>Northbound</rtdir>\r\n", "\t\t        \t<des>Ashland/Clark</des>\r\n", "\t\t        \t<prdtm>20131231 09:37</prdtm>\r\n", "\t\t        \t\r\n", "\t\t\t\t</prd>\t\t\t\r\n", "\t\t\t\r\n", "\t\t\t\t<prd>\r\n", "\t\t\t\t\t<tmstmp>20131231 09:26</tmstmp>\r\n", "\t\t\t\t\t<typ>A</typ>\r\n", "\t\t\t\t\t<stpnm>Damen &amp; Irving Park/Lincoln</stpnm>\r\n", "\t\t\t\t\t<stpid>8951</stpid>\r\n", "\t\t\t\t\t<vid>1310</vid>\r\n", "\t\t\t\t\t\r\n", "\t\t\t\t\t \t\t\t\t\t\r\n", "\t\t\t\t\t<dstp>14090</dstp>\r\n", "\t\t\t\t\t<rt>50</rt>\r\n", "\t\t\t\t\t<rtdir>Northbound</rtdir>\r\n", "\t\t        \t<des>Ashland/Clark</des>\r\n", "\t\t        \t<prdtm>20131231 09:43</prdtm>\r\n", "\t\t        \t\r\n", "\t\t\t\t</prd>\t\t\t\r\n", "\t\t\t\r\n", "\t\t\t\t<prd>\r\n", "\t\t\t\t\t<tmstmp>20131231 09:26</tmstmp>\r\n", "\t\t\t\t\t<typ>A</typ>\r\n", "\t\t\t\t\t<stpnm>Damen &amp; Belmont</stpnm>\r\n", "\t\t\t\t\t<stpid>8942</stpid>\r\n", "\t\t\t\t\t<vid>1322</vid>\r\n", "\t\t\t\t\t\r\n", "\t\t\t\t\t \t\t\t\t\t\r\n", "\t\t\t\t\t<dstp>13897</dstp>\r\n", "\t\t\t\t\t<rt>50</rt>\r\n", "\t\t\t\t\t<rtdir>Northbound</rtdir>\r\n", "\t\t        \t<des>Ashland/Clark</des>\r\n", "\t\t        \t<prdtm>20131231 09:43</prdtm>\r\n", "\t\t        \t\r\n", "\t\t\t\t</prd>\t\t\t\r\n", "\t\t\t\r\n", "\t\t\t\t<prd>\r\n", "\t\t\t\t\t<tmstmp>20131231 09:26</tmstmp>\r\n", "\t\t\t\t\t<typ>A</typ>\r\n", "\t\t\t\t\t<stpnm>Damen &amp; Argyle</stpnm>\r\n", "\t\t\t\t\t<stpid>8816</stpid>\r\n", "\t\t\t\t\t<vid>1911</vid>\r\n", "\t\t\t\t\t\r\n", "\t\t\t\t\t \t\t\t\t\t\r\n", "\t\t\t\t\t<dstp>7733</dstp>\r\n", "\t\t\t\t\t<rt>50</rt>\r\n", "\t\t\t\t\t<rtdir>Southbound</rtdir>\r\n", "\t\t        \t<des>35th/Archer Orange Line</des>\r\n", "\t\t        \t<prdtm>20131231 09:43</prdtm>\r\n", "\t\t        \t\r\n", "\t\t\t\t</prd>\t\t\t\r\n", "\t\t\t\r\n", "\t\t\t\t<prd>\r\n", "\t\t\t\t\t<tmstmp>20131231 09:26</tmstmp>\r\n", "\t\t\t\t\t<typ>A</typ>\r\n", "\t\t\t\t\t<stpnm>Damen &amp; Montrose</stpnm>\r\n", "\t\t\t\t\t<stpid>8955</stpid>\r\n", "\t\t\t\t\t<vid>1310</vid>\r\n", "\t\t\t\t\t\r\n", "\t\t\t\t\t \t\t\t\t\t\r\n", "\t\t\t\t\t<dstp>16540</dstp>\r\n", "\t\t\t\t\t<rt>50</rt>\r\n", "\t\t\t\t\t<rtdir>Northbound</rtdir>\r\n", "\t\t        \t<des>Ashland/Clark</des>\r\n", "\t\t        \t<prdtm>20131231 09:46</prdtm>\r\n", "\t\t        \t\r\n", "\t\t\t\t</prd>\t\t\t\r\n", "\t\t\t\r\n", "\t\t\t\t<prd>\r\n", "\t\t\t\t\t<tmstmp>20131231 09:26</tmstmp>\r\n", "\t\t\t\t\t<typ>A</typ>\r\n", "\t\t\t\t\t<stpnm>Damen &amp; Eastwood (Brown Line)</stpnm>\r\n", "\t\t\t\t\t<stpid>8819</stpid>\r\n", "\t\t\t\t\t<vid>1911</vid>\r\n", "\t\t\t\t\t\r\n", "\t\t\t\t\t \t\t\t\t\t\r\n", "\t\t\t\t\t<dstp>10070</dstp>\r\n", "\t\t\t\t\t<rt>50</rt>\r\n", "\t\t\t\t\t<rtdir>Southbound</rtdir>\r\n", "\t\t        \t<des>35th/Archer Orange Line</des>\r\n", "\t\t        \t<prdtm>20131231 09:46</prdtm>\r\n", "\t\t        \t\r\n", "\t\t\t\t</prd>\t\t\t\r\n", "\t\t\t\r\n", "\t\t\t\t<prd>\r\n", "\t\t\t\t\t<tmstmp>20131231 09:26</tmstmp>\r\n", "\t\t\t\t\t<typ>A</typ>\r\n", "\t\t\t\t\t<stpnm>Damen &amp; Eastwood (Brown Line)</stpnm>\r\n", "\t\t\t\t\t<stpid>4954</stpid>\r\n", "\t\t\t\t\t<vid>1310</vid>\r\n", "\t\t\t\t\t\r\n", "\t\t\t\t\t \t\t\t\t\t\r\n", "\t\t\t\t\t<dstp>18368</dstp>\r\n", "\t\t\t\t\t<rt>50</rt>\r\n", "\t\t\t\t\t<rtdir>Northbound</rtdir>\r\n", "\t\t        \t<des>Ashland/Clark</des>\r\n", "\t\t        \t<prdtm>20131231 09:48</prdtm>\r\n", "\t\t        \t\r\n", "\t\t\t\t</prd>\t\t\t\r\n", "\t\t\t\r\n", "\t\t\t\t<prd>\r\n", "\t\t\t\t\t<tmstmp>20131231 09:26</tmstmp>\r\n", "\t\t\t\t\t<typ>A</typ>\r\n", "\t\t\t\t\t<stpnm>Damen &amp; Irving Park/Lincoln</stpnm>\r\n", "\t\t\t\t\t<stpid>8951</stpid>\r\n", "\t\t\t\t\t<vid>1322</vid>\r\n", "\t\t\t\t\t\r\n", "\t\t\t\t\t \t\t\t\t\t\r\n", "\t\t\t\t\t<dstp>19440</dstp>\r\n", "\t\t\t\t\t<rt>50</rt>\r\n", "\t\t\t\t\t<rtdir>Northbound</rtdir>\r\n", "\t\t        \t<des>Ashland/Clark</des>\r\n", "\t\t        \t<prdtm>20131231 09:49</prdtm>\r\n", "\t\t        \t\r\n", "\t\t\t\t</prd>\t\t\t\r\n", "\t\t\t\r\n", "\t\t\t\t<prd>\r\n", "\t\t\t\t\t<tmstmp>20131231 09:26</tmstmp>\r\n", "\t\t\t\t\t<typ>A</typ>\r\n", "\t\t\t\t\t<stpnm>Damen &amp; Montrose</stpnm>\r\n", "\t\t\t\t\t<stpid>8955</stpid>\r\n", "\t\t\t\t\t<vid>1322</vid>\r\n", "\t\t\t\t\t\r\n", "\t\t\t\t\t \t\t\t\t\t\r\n", "\t\t\t\t\t<dstp>21890</dstp>\r\n", "\t\t\t\t\t<rt>50</rt>\r\n", "\t\t\t\t\t<rtdir>Northbound</rtdir>\r\n", "\t\t        \t<des>Ashland/Clark</des>\r\n", "\t\t        \t<prdtm>20131231 09:52</prdtm>\r\n", "\t\t        \t\r\n", "\t\t\t\t</prd>\t\t\t\r\n", "\t\t\t\r\n", "\t\t\t\t<prd>\r\n", "\t\t\t\t\t<tmstmp>20131231 09:26</tmstmp>\r\n", "\t\t\t\t\t<typ>A</typ>\r\n", "\t\t\t\t\t<stpnm>Clark &amp; Bryn Mawr</stpnm>\r\n", "\t\t\t\t\t<stpid>1802</stpid>\r\n", "\t\t\t\t\t<vid>1780</vid>\r\n", "\t\t\t\t\t\r\n", "\t\t\t\t\t \t\t\t\t\t\r\n", "\t\t\t\t\t<dstp>15311</dstp>\r\n", "\t\t\t\t\t<rt>50</rt>\r\n", "\t\t\t\t\t<rtdir>Southbound</rtdir>\r\n", "\t\t        \t<des>35th/Archer Orange Line</des>\r\n", "\t\t        \t<prdtm>20131231 09:53</prdtm>\r\n", "\t\t        \t\r\n", "\t\t\t\t</prd>\t\t\t\r\n", "\t\t\t\r\n", "\t\t\t\t<prd>\r\n", "\t\t\t\t\t<tmstmp>20131231 09:26</tmstmp>\r\n", "\t\t\t\t\t<typ>A</typ>\r\n", "\t\t\t\t\t<stpnm>Damen &amp; Belmont</stpnm>\r\n", "\t\t\t\t\t<stpid>8942</stpid>\r\n", "\t\t\t\t\t<vid>1795</vid>\r\n", "\t\t\t\t\t\r\n", "\t\t\t\t\t \t\t\t\t\t\r\n", "\t\t\t\t\t<dstp>23806</dstp>\r\n", "\t\t\t\t\t<rt>50</rt>\r\n", "\t\t\t\t\t<rtdir>Northbound</rtdir>\r\n", "\t\t        \t<des>Ashland/Clark</des>\r\n", "\t\t        \t<prdtm>20131231 09:54</prdtm>\r\n", "\t\t        \t\r\n", "\t\t\t\t</prd>\t\t\t\r\n", "\r\n", "\t\t</bustime-response>\r\n", "\r\n", "\t\t\r\n"]<?xml version="1.0"?>
+
+		<bustime-response>	
+			
+				<prd>
+					<tmstmp>20131231 10:55</tmstmp>
+					<typ>A</typ>
+					<stpnm>Damen &amp; Irving Park/Lincoln</stpnm>
+					<stpid>8951</stpid>
+					<vid>1402</vid>
+					
+					 					
+					<dstp>773</dstp>
+					<rt>50</rt>
+					<rtdir>Northbound</rtdir>
+		        	<des>Ashland/Clark</des>
+		        	<prdtm>20131231 10:57</prdtm>
+		        	
+				</prd>			
+			
+				<prd>
+					<tmstmp>20131231 10:55</tmstmp>
+					<typ>A</typ>
+					<stpnm>Damen &amp; Montrose</stpnm>
+					<stpid>8955</stpid>
+					<vid>1402</vid>
+					
+					 					
+					<dstp>3223</dstp>
+					<rt>50</rt>
+					<rtdir>Northbound</rtdir>
+		        	<des>Ashland/Clark</des>
+		        	<prdtm>20131231 10:59</prdtm>
+		        	
+				</prd>			
+			
+				<prd>
+					<tmstmp>20131231 10:55</tmstmp>
+					<typ>A</typ>
+					<stpnm>Damen &amp; Eastwood (Brown Line)</stpnm>
+					<stpid>4954</stpid>
+					<vid>1402</vid>
+					
+					 					
+					<dstp>5051</dstp>
+					<rt>50</rt>
+					<rtdir>Northbound</rtdir>
+		        	<des>Ashland/Clark</des>
+		        	<prdtm>20131231 11:01</prdtm>
+		        	
+				</prd>			
+			
+				<prd>
+					<tmstmp>20131231 10:56</tmstmp>
+					<typ>A</typ>
+					<stpnm>Clark &amp; Bryn Mawr</stpnm>
+					<stpid>1802</stpid>
+					<vid>1420</vid>
+					
+					 					
+					<dstp>962</dstp>
+					<rt>50</rt>
+					<rtdir>Southbound</rtdir>
+		        	<des>35th/Archer Orange Line</des>
+		        	<prdtm>20131231 11:01</prdtm>
+		        	
+				</prd>			
+			
+				<prd>
+					<tmstmp>20131231 10:56</tmstmp>
+					<typ>A</typ>
+					<stpnm>Damen &amp; Belmont</stpnm>
+					<stpid>8942</stpid>
+					<vid>1326</vid>
+					
+					 					
+					<dstp>7239</dstp>
+					<rt>50</rt>
+					<rtdir>Northbound</rtdir>
+		        	<des>Ashland/Clark</des>
+		        	<prdtm>20131231 11:05</prdtm>
+		        	
+				</prd>			
+			
+				<prd>
+					<tmstmp>20131231 10:56</tmstmp>
+					<typ>A</typ>
+					<stpnm>Damen &amp; Argyle</stpnm>
+					<stpid>8816</stpid>
+					<vid>1420</vid>
+					
+					 					
+					<dstp>7804</dstp>
+					<rt>50</rt>
+					<rtdir>Southbound</rtdir>
+		        	<des>35th/Archer Orange Line</des>
+		        	<prdtm>20131231 11:08</prdtm>
+		        	
+				</prd>			
+			
+				<prd>
+					<tmstmp>20131231 10:56</tmstmp>
+					<typ>A</typ>
+					<stpnm>Damen &amp; Irving Park/Lincoln</stpnm>
+					<stpid>8951</stpid>
+					<vid>1326</vid>
+					
+					 					
+					<dstp>12782</dstp>
+					<rt>50</rt>
+					<rtdir>Northbound</rtdir>
+		        	<des>Ashland/Clark</des>
+		        	<prdtm>20131231 11:11</prdtm>
+		        	
+				</prd>			
+			
+				<prd>
+					<tmstmp>20131231 10:56</tmstmp>
+					<typ>A</typ>
+					<stpnm>Damen &amp; Eastwood (Brown Line)</stpnm>
+					<stpid>8819</stpid>
+					<vid>1420</vid>
+					
+					 					
+					<dstp>10141</dstp>
+					<rt>50</rt>
+					<rtdir>Southbound</rtdir>
+		        	<des>35th/Archer Orange Line</des>
+		        	<prdtm>20131231 11:11</prdtm>
+		        	
+				</prd>			
+			
+				<prd>
+					<tmstmp>20131231 10:56</tmstmp>
+					<typ>A</typ>
+					<stpnm>Damen &amp; Montrose</stpnm>
+					<stpid>8955</stpid>
+					<vid>1326</vid>
+					
+					 					
+					<dstp>15232</dstp>
+					<rt>50</rt>
+					<rtdir>Northbound</rtdir>
+		        	<des>Ashland/Clark</des>
+		        	<prdtm>20131231 11:13</prdtm>
+		        	
+				</prd>			
+			
+				<prd>
+					<tmstmp>20131231 10:56</tmstmp>
+					<typ>A</typ>
+					<stpnm>Damen &amp; Eastwood (Brown Line)</stpnm>
+					<stpid>4954</stpid>
+					<vid>1326</vid>
+					
+					 					
+					<dstp>17060</dstp>
+					<rt>50</rt>
+					<rtdir>Northbound</rtdir>
+		        	<des>Ashland/Clark</des>
+		        	<prdtm>20131231 11:15</prdtm>
+		        	
+				</prd>			
+			
+				<prd>
+					<tmstmp>20131231 10:56</tmstmp>
+					<typ>A</typ>
+					<stpnm>Damen &amp; Belmont</stpnm>
+					<stpid>8942</stpid>
+					<vid>1317</vid>
+					
+					 					
+					<dstp>18128</dstp>
+					<rt>50</rt>
+					<rtdir>Northbound</rtdir>
+		        	<des>Ashland/Clark</des>
+		        	<prdtm>20131231 11:17</prdtm>
+		        	
+				</prd>			
+			
+				<prd>
+					<tmstmp>20131231 10:49</tmstmp>
+					<typ>A</typ>
+					<stpnm>Clark &amp; Bryn Mawr</stpnm>
+					<stpid>1802</stpid>
+					<vid>1303</vid>
+					
+					 					
+					<dstp>14693</dstp>
+					<rt>50</rt>
+					<rtdir>Southbound</rtdir>
+		        	<des>35th/Archer Orange Line</des>
+		        	<prdtm>20131231 11:18</prdtm>
+		        	
+				</prd>			
+			
+				<prd>
+					<tmstmp>20131231 10:56</tmstmp>
+					<typ>A</typ>
+					<stpnm>Damen &amp; Irving Park/Lincoln</stpnm>
+					<stpid>8951</stpid>
+					<vid>1317</vid>
+					
+					 					
+					<dstp>23671</dstp>
+					<rt>50</rt>
+					<rtdir>Northbound</rtdir>
+		        	<des>Ashland/Clark</des>
+		        	<prdtm>20131231 11:24</prdtm>
+		        	
+				</prd>			
+			
+				<prd>
+					<tmstmp>20131231 10:56</tmstmp>
+					<typ>A</typ>
+					<stpnm>Damen &amp; Montrose</stpnm>
+					<stpid>8955</stpid>
+					<vid>1317</vid>
+					
+					 					
+					<dstp>26121</dstp>
+					<rt>50</rt>
+					<rtdir>Northbound</rtdir>
+		        	<des>Ashland/Clark</des>
+		        	<prdtm>20131231 11:26</prdtm>
+		        	
+				</prd>			
+
+		</bustime-response>
+
+		
