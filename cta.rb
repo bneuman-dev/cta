@@ -68,7 +68,7 @@ def ready
 
 	while true
 		file1 = write_xml(train1.get_data, 'train', 30019)
-		file2 = write_xml(bus.get_xml, 'bus', 50)
+		file2 = write_xml(bus.get_data, 'bus', 50)
 		file3 = write_xml(train2.get_data, 'train', 30091)
 		xml_to_json(file1, file2, file3)
 		sleep 150

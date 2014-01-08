@@ -10,10 +10,56 @@ def morning
 	[bus_xml.data, train_xml.data]
 end
 
-def start?
-	(Time.new(2014, 1, 7, 22, 50) - Time.now)/60 < 2
+def leaving?
+	time = Time.now
+	time.hour == 12 && time.min > 35
 end
 
+def left?
+	time = Time.now
+	time.hour == 12 && time.min > 37
+end
+
+def logging?
+	Time.now.hour < 22
+end
+
+def depart?
+	time.hour > 5
+end
+
+# class Task
+# 	def initialize(task, start_time, end_time)
+# 		@task = task
+# 		@start_time = start_time
+# 		@end_time = end_time
+
+# 	end
+#*ctas = [[{bus: 3319}, {bus: 3323}], [{train: 3320}, {train: 3330}]]
+#validate to make sure that start/end are both bus/both train/same rt
+# option to have no arrival - don't care?
+
+def cta_intersection(*ctas)
+	predictions = ctas.collect { |cta| get_prediction(cta) }
+	#need some way to group together 'start stop' and 'end stop'
+end
+
+def get_prediction(cta)
+	prediction = cta[:vehicle] == bus ? BusPrediction.new(cta[:id]) : TrainPrediction.new(cta[:id])
+	prediction.get_data
+end
+
+def get_departure_arrival(depart_stop, arrival_stop)
+	id = depart_stop[:id]
+	arrival = arrival_stop.find { |vehicle| vehicle[:id] == id }
+	arrival_time = arrival[:predicted]
+end
+
+def get_arrival_departure(arrival_stop, depart_stop)
+	arrival_time = arrival_stop[:predicted]
+	depart_stop = depart_stop.find { |vehicle| vehicle[:predicted] > arrival_time }
+	#what if depart_stop == nil
+end
 
 def nearest(busses, trains)
 	argyle = get_sorted_argyle_busses(busses)
@@ -55,41 +101,45 @@ def get_sorted_trains(trains)
 	trains.sort { |x, y| x[:predicted] <=> y[:predicted] }
 end
 
+while true
+	until leaving?
+	 	sleep 20
+		puts "not started yet"
+	end
 
-until start?
- 	sleep 200
-	puts "not started yet"
+	until left?
+		strings = []
+		busses, trains = morning
+		busses.select {|bus| bus[:stop_id] == "8816" }.each do |bus|
+			time = bus[:predicted].split(' ')[-1]
+			strings << "Predicted time #{time} for bus #{bus[:id]} at stop #{bus[:stop_name]}"
+		end
+
+		trains.each do |train|
+			time = train[:predicted].split(' ')[-1]
+			strings << "Predicted time #{time} for train #{train[:id]} at stop #{train[:station_name]}"
+		end
+
+		busses.select {|bus| bus[:stop_id] == "8819" }.each do |bus|
+			time = bus[:predicted].split(' ')[-1]
+			strings << "Predicted time #{time} for bus #{bus[:id]} at stop #{bus[:stop_name]}"
+		end
+
+		strings << nearest(busses, trains)
+		strings.flatten!
+		strings.each do |string|
+			puts string
+			puts ""
+		end
+
+		joke = File.open('morning-data.txt', 'a')
+		strings.each {|string| joke.write(string + '\n')} 
+		joke.close
+		sleep 150
+	end
+
+	while logging?
+		ready
+	end
+
 end
-
-until Time.now > Time.new(2014, 1, 7, 22, 56) 
-	strings = []
-	busses, trains = morning
-	busses.select {|bus| bus[:stop_id] == "8816" }.each do |bus|
-		time = bus[:predicted].split(' ')[-1]
-		strings << "Predicted time #{time} for bus #{bus[:id]} at stop #{bus[:stop_name]}"
-	end
-
-	trains.each do |train|
-		time = train[:predicted].split(' ')[-1]
-		strings << "Predicted time #{time} for train #{train[:id]} at stop #{train[:station_name]}"
-	end
-
-	busses.select {|bus| bus[:stop_id] == "8819" }.each do |bus|
-		time = bus[:predicted].split(' ')[-1]
-		strings << "Predicted time #{time} for bus #{bus[:id]} at stop #{bus[:stop_name]}"
-	end
-
-	strings << nearest(busses, trains)
-	strings.flatten!
-	strings.each do |string|
-		puts string
-		puts ""
-	end
-
-	joke = File.open('morning-data.txt', 'a')
-	strings.each {|string| joke.write(string + '\n')} 
-	joke.close
-	sleep 150
-end
-
-ready

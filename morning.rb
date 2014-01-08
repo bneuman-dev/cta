@@ -9,9 +9,24 @@ def morning
 	[bus_xml.data, train_xml.data]
 end
 
-def start?
-	(Time.new(2014, 1, 8, 6, 35) - Time.now)/60 < 2
+def leaving?
+	time = Time.now
+	time.hour == 6 && time.min > 25 
 end
+
+def left?
+	time = Time.now
+	time.hour == 7 && time.min > 25
+end
+
+def logging?
+	Time.now.hour < 22
+end
+
+def depart?
+	time.hour > 5
+end
+
 
 
 def nearest(busses, trains)
@@ -37,7 +52,8 @@ until start?
 	puts "not started yet"
 end
 
-until Time.now > Time.new(2014, 1, 6, 7, 25) 
+
+until Time.now.hour >  
 	strings = []
 	busses, trains = morning
 	busses.select {|bus| bus[:stop_id] == "8816" }.each do |bus|
