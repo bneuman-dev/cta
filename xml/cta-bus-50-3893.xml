@@ -1,0 +1,70 @@
+<?xml version="1.0"?>
+
+		<bustime-response>	
+
+			<error>
+				
+					<rt>50</rt>
+				
+					<stpid>8816</stpid>
+									
+				<msg>No data found for parameter</msg>
+			</error>
+
+			<error>
+				
+					<rt>50</rt>
+				
+					<stpid>8819</stpid>
+									
+				<msg>No service scheduled</msg>
+			</error>
+
+			<error>
+				
+					<rt>50</rt>
+				
+					<stpid>1802</stpid>
+									
+				<msg>No service scheduled</msg>
+			</error>
+
+			<error>
+				
+					<rt>50</rt>
+				
+					<stpid>4954</stpid>
+									
+				<msg>No service scheduled</msg>
+			</error>
+
+			<error>
+				
+					<rt>50</rt>
+				
+					<stpid>8955</stpid>
+									
+				<msg>No service scheduled</msg>
+			</error>
+
+			<error>
+				
+					<rt>50</rt>
+				
+					<stpid>8951</stpid>
+									
+				<msg>No data found for parameter</msg>
+			</error>
+
+			<error>
+				
+					<rt>50</rt>
+				
+					<stpid>8942</stpid>
+									
+				<msg>No data found for parameter</msg>
+			</error>
+
+		</bustime-response>
+
+		

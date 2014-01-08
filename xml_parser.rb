@@ -1,5 +1,6 @@
 require 'nokogiri'
 require 'date'
+require 'json'
 #For trains one XML file covers ONE station. Can contain multiple <eta></eta> elements describing different trains with different ETAs into that one station.
 
 
@@ -89,69 +90,76 @@ class DataCollection
 end
 
 class CTAXMLParser
-	attr_reader :data, :noko, :headings, :predictions
-	def initialize(xml, xml_div_tag, headings)
-		@noko = Nokogiri::XML(xml)
-		@xml_div_tag = make_xpath(xml_div_tag)
-		@searches = make_xpath_searches(headings)
-		@predictions = parse_by_prediction
+	attr_reader :data, :noko_xml, :root_headings
+	def initialize(xml, prediction_key, headings)
+		@noko_xml = Nokogiri::XML(xml)
+		@prediction_key = prediction_key
+		@headings = headings
+		@root_headings = headings.delete(:root)
+		@root_data = get_root_data
+		@data = get_data
 	end
 
-	def make_xpath_searches(headings)
-		searches = {}
-		root_headings = headings.delete(:root)
-
-		headings.each do |heading, search_term|
-			searches[heading] = make_xpath(search_term)
-		end
-
-		add_root_headings(searches, root_headings)
-	end
-
-	def add_root_headings(searches, root_headings)
-		return searches if !root_headings
-
-		root_headings.each do |heading, search_term|
-			searches[heading] = make_xpath(search_term, rel_path=false)
-		end
-
-		return searches
-	end
-
-	def make_xpath(element_name, rel_path=true)
-		xpath_root = "//" + element_name
-		rel_path ? "." + xpath_root : xpath_root
-	end
-
-	def parse_by_prediction
-		xpath_search(@noko, @xml_div_tag).collect do |prediction|
-			pred = get_data(prediction)
-			pred[:datetime] = DateTime.parse(pred[:predicted])
-			pred
+	def get_data
+		divide_by_prediction.collect do |prediction|
+			data = search(prediction, @headings)
+			data = add_datetime(data)
+			data.merge(@root_data)
 		end
 	end
 
-	def data
-		@predictions.flatten
+	def get_root_data
+		@root_headings ? search(@noko_xml, @root_headings) : {}
 	end
 
-	def get_data(prediction)
-		@searches.inject({}) do |data, key_value|
-			heading = key_value[0]
-			search = key_value[1]
-			data[heading] = xpath_search(prediction, search).text
-			data
+	def add_datetime(prediction)
+		prediction[:datetime] = DateTime.parse(prediction[:predicted])
+		prediction
+	end
+
+	def search(xml, headings)
+		data = {}
+		headings.each do |heading, search_key|
+			data[heading] = get_text_from_xml(xml, search_key)
 		end
+		return data
 	end
 
-	def xpath_search(prediction, search)
-		prediction.search(search)
+	def get_text_from_xml(xml, search_key)
+		xml_search(xml, search_key).text
 	end
+
+	def xml_search(xml, search_key)
+		xml.search(".//#{search_key}")
+	end
+
+	def divide_by_prediction
+		xml_search(@noko_xml, @prediction_key)
+	end
+
+	def write_json(filename)
+		file = File.open(filename, 'w')
+		file.write(JSON.generate(@data))
+		file.close
+	end
+
 end
 
-class BusXMLParser < CTAXMLParser
-	def initialize(xml_file)
-		headings = {    timestamp: 'tmstmp',
+def bus_xml_parser_f(xml_file)
+	xml = File.open(xml_file).readlines.join('')
+	bus_xml_parser(xml)
+end
+
+def train_xml_parser_f(xml_file)
+	xml = File.open(xml_file).readlines.join('')
+	train_xml_parser(xml)
+end
+
+def bus_xml_parser(xml)
+	
+	prediction_tag = 'prd'
+	headings = 	{    
+			 timestamp: 'tmstmp',
 			 stop_id: 'stpid',
 			 stop_name: 'stpnm',
 			 id: 'vid',
@@ -162,16 +170,13 @@ class BusXMLParser < CTAXMLParser
 			 direction: 'rtdir',
 			 feet_left_to_stop: 'dstp',
 			}
-		xml = File.open(xml_file).readlines.join('')
-		xml_tag = 'prd'
-
-		super(xml, xml_tag, headings)
-	end
+	CTAXMLParser.new(xml, prediction_tag, headings)
 end
 
-class TrainXMLParser < CTAXMLParser
-	def initialize(xml_file)
-		headings = 	{
+def train_xml_parser(xml)
+	prediction_tag = 'eta'
+
+	headings = 	{
 			root: {timestamp: "tmst"},
 			stop_id: "stpId",
 			stop_name: "stpDe",
@@ -188,9 +193,6 @@ class TrainXMLParser < CTAXMLParser
 			destination_stpd_id: "destSt",
 			destination_name: "destNm",
 		}
-		xml = File.open(xml_file).readlines.join('')
-		xml_tag = 'eta'
 
-		super(xml, xml_tag, headings)
-	end
+	CTAXMLParser.new(xml, prediction_tag, headings)
 end
