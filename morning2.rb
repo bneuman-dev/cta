@@ -39,14 +39,41 @@ end
 #validate to make sure that start/end are both bus/both train/same rt
 # option to have no arrival - don't care?
 
-def cta_intersection(*ctas)
-	predictions = ctas.collect { |cta| get_prediction(cta) }
-	#need some way to group together 'start stop' and 'end stop'
+class CTA_Trip
+	attr_reader :pairs
+	def initialize(route, depart_stop, end_stop)
+		depart_xml = make_prediction(route, depart_stop).get_data
+		end_xml = make_prediction(route, end_stop).get_data
+		@pairs = make_pairs
+	end
+
+	def make_pairs
+		@depart_prediction.reduce([]) do |pairs, dep_pred|
+			id = dep_pred[:id]
+			end_pred = @end_prediction.find { |prediction| prediction[:id] == id}
+			pairs << {dep: dep_pred, arr: end_pred}
+		end
+	end
 end
 
-def get_prediction(cta)
-	prediction = cta[:vehicle] == bus ? BusPrediction.new(cta[:id]) : TrainPrediction.new(cta[:id])
-	prediction.get_data
+#ctas = [{50}: [3319, 3323]}]
+def cta_intersection(*ctas)
+	trips = ctas.collect do |route, (dep_stop, arr_stop)|
+		CTA_Trip.new(route, dep_stop, arr_stop)
+	end
+
+	find_intersections(trips)
+end
+
+def find_intersections(trips)
+	trip1 = trips[0]
+	trip2 = trips[1]
+
+	arr = trip1.pairs[0][:arr]
+
+	trip2.pairs.find do |pair|
+		pair[:dep][:predicted] > arr[:predicted]
+	end
 end
 
 def get_departure_arrival(depart_stop, arrival_stop)
@@ -141,5 +168,4 @@ while true
 	while logging?
 		ready
 	end
-
 end

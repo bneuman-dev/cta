@@ -6,16 +6,16 @@ def stop_ids
 end
 
 class BusPrediction
-	def initialize(stops, rt)
-		@stops = stops
+	def initialize(stop, rt)
+		@stop = stop
 		@rt = rt.to_s
 		@bus_key = "p9NLSAchMtx4qYD4v93Nr2CdJ"
 		@base_url = "http://www.ctabustracker.com/bustime/api/v1/getpredictions/?key=" + @bus_key
 	end
 
 	def url
-		stops = @stops.join(',')
-		"#{@base_url}&rt=#{@rt}&stpid=#{stops}"
+		#stops = @stops.join(',')
+		"#{@base_url}&rt=#{@rt}&stpid=#{@stop}"
 	end
 
 	def get_data
@@ -40,6 +40,18 @@ class TrainPrediction
 		open(url).readlines.join('')
 	end
 end
+
+def make_prediction(route, stop)
+	trains = ['red', 'blue', 'brn', 'g', 'org', 'p', 'pink', 'y']
+
+	if trains.include? route
+		TrainPrediction.new(stop, route)
+
+	else
+		BusPrediction.new(stop, route)
+	end
+end
+
 
 def write_xml(xml, string, id)
 	file_exists = true
