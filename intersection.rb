@@ -66,6 +66,20 @@ class TripPredIntersections
   end
 end
 
+class MultiIntersections
+
+  def initialize(int1, int2)
+    @int1 = int1
+    @int2 = int2
+  end
+
+  def find
+    @int2.intersections.find do |inter|
+      inter[:trip1] == @int1.intersections[0][:trip2]
+    end
+  end
+end
+
 class TripIntersections
   attr_reader :super_int
   def initialize(trip1, trip2, trip3)
@@ -103,6 +117,7 @@ end
 
 
 
+
 def dodo
   trip1 = TripPredictions.new(50, '8816', '8819')
   trip2 = TripPredictions.new(81, '3760', '3769')
@@ -110,12 +125,26 @@ def dodo
 end
 
 
-def dodo2
-  trip1 = [50, '8816', '8819']
-  trip2 = [81, '3760', '3769']
-  trip3 = [36, '5347', '5363']
+def preds
 
-  TripIntersections.new(trip1, trip2, trip3)
+  trip1 = TripPredictions.new(50, '8816', '8819')
+  trip2 = TripPredictions.new(81, '3760', '3769')
+  trip3 = TripPredictions.new(36, '5347', '5363')
+  [trip1, trip2, trip3]
+
+end
+
+def dodo2
+  # trip1 = [50, '8816', '8819']
+  # trip2 = [81, '3760', '3769']
+    # trip3 = [36, '5347', '5363']
+    # TripIntersections.new(trip1, trip2, trip3)
+
+
+  int1 = TripPredIntersections.new(trip1.preds, trip2.preds)
+  int2 = TripPredIntersections.new(trip2.preds, trip3.preds)
+
+  MultiIntersections.new(int1, int2)
 end
 
 
