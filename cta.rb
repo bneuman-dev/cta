@@ -32,23 +32,12 @@ class TrainPrediction
 	end
 
 	def url
-		url = @base_url + "&mapid=" + @mapid
+		url = "#{@base_url}&mapid=#{@mapid}"
 		@rt ? url += "&rt=#{@rt}" : url
 	end
 
 	def get_data
 		open(url).readlines.join('')
-	end
-end
-
-def make_prediction(route, stop)
-	trains = ['red', 'blue', 'brn', 'g', 'org', 'p', 'pink', 'y']
-
-	if trains.include? route
-		TrainPrediction.new(stop, route)
-
-	else
-		BusPrediction.new(stop, route)
 	end
 end
 

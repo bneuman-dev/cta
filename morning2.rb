@@ -39,18 +39,31 @@ end
 #validate to make sure that start/end are both bus/both train/same rt
 # option to have no arrival - don't care?
 
+def make_prediction(route, stop)
+	trains = ['red', 'blue', 'brn', 'g', 'org', 'p', 'pink', 'y']
+
+	if trains.include? route
+		pred = TrainPrediction.new(stop, route)
+		train_xml_parser(pred.get_data).data
+
+	else
+		pred = BusPrediction.new(stop, route)
+		bus_xml_parser(pred.get_data).data
+	end
+end
+
 class CTA_Trip
 	attr_reader :pairs
 	def initialize(route, depart_stop, end_stop)
-		depart_xml = make_prediction(route, depart_stop).get_data
-		end_xml = make_prediction(route, end_stop).get_data
+		@depart = make_prediction(route, depart_stop)
+		@arrive = make_prediction(route, end_stop)
 		@pairs = make_pairs
 	end
 
 	def make_pairs
-		@depart_prediction.reduce([]) do |pairs, dep_pred|
+		@depart.reduce([]) do |pairs, dep_pred|
 			id = dep_pred[:id]
-			end_pred = @end_prediction.find { |prediction| prediction[:id] == id}
+			end_pred = @arrive.find { |prediction| prediction[:id] == id}
 			pairs << {dep: dep_pred, arr: end_pred}
 		end
 	end
