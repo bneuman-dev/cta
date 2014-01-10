@@ -43,7 +43,8 @@ class TripPredIntersections
   end
 
   def get_data
-    @trip1_preds.collect do |pred|
+    @trip1_preds.reject { |pred| !pred[:arr] }
+    .collect do |pred|
       intersection = get_intersection_data(pred)
       intersection[:trip1] = pred
       intersection
