@@ -1,6 +1,7 @@
 require_relative 'cta.rb'
 require_relative 'xml_parser.rb'
 require_relative 'morning2.rb'
+require 'debugger'
 
 def make_prediction(route, stop)
   trains = ['red', 'blue', 'brn', 'g', 'org', 'p', 'pink', 'y']
@@ -68,16 +69,35 @@ class TripPredIntersections
 end
 
 class MultiIntersections
+  attr_reader :int1, :int2
 
-  def initialize(int1, int2)
-    @int1 = int1
-    @int2 = int2
+  def initialize(*intses)
+    @intses = intses
   end
 
-  def find
-    @int2.intersections.find do |inter|
-      inter[:trip1] == @int1.intersections[0][:trip2]
+  def do
+  
+    intsies = @intses.dup
+    ints1 = intsies.shift
+    int1 = ints1[0]
+    unities = [unite(int1, intsies[0])]
+
+    until intsies.size == 1
+      intsies.shift
+      next_int = unity1[0]
+      unities << unite(next_int, intsies.shift)
     end
+
+    unities
+  end
+
+
+  def unite(int, ints2)
+    inter_intersection = ints2.find do |int2|
+      int2[:trip1] == int[:trip2]
+    end
+
+    [int, inter_intersection]
   end
 end
 
@@ -131,8 +151,10 @@ def preds
   trip1 = TripPredictions.new(50, '8816', '8819')
   trip2 = TripPredictions.new(81, '3760', '3769')
   trip3 = TripPredictions.new(36, '5347', '5363')
-  [trip1, trip2, trip3]
-
+  
+  int1 = TripPredIntersections.new(trip1.preds, trip2.preds)
+  int2 = TripPredIntersections.new(trip2.preds, trip3.preds)
+  [trip1, trip2, trip3, int1, int2]
 end
 
 def dodo2
@@ -142,8 +164,6 @@ def dodo2
     # TripIntersections.new(trip1, trip2, trip3)
 
 
-  int1 = TripPredIntersections.new(trip1.preds, trip2.preds)
-  int2 = TripPredIntersections.new(trip2.preds, trip3.preds)
 
   MultiIntersections.new(int1, int2)
 end
