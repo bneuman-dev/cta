@@ -2,149 +2,119 @@ require_relative 'cta.rb'
 require_relative 'xml_parser.rb'
 require_relative 'morning2.rb'
 
-def make_prediction(route, stop)
+
+#My idea of what a 'prediction' or 'route' looks like is constrained by the CTA API. 
+#E.g., a single prediction only predicts an arrival at one stop because of how train API lookups work.
+#Bus APIs allow looking up more than one stop at once, but the train doesn't. If I want to abstract I have to pretend
+#you can only look up one bus stop at once.
+#Do I? What if I abstract TrainPrediction so you can treat it like BusPrediction? Hm!
+# Also, wouldn't have this constraint if I regularly mined ALL data from CTA.
+
+include CTAFetcher
+
+def get_predictions_for_stop(route, stop)
   trains = ['red', 'blue', 'brn', 'g', 'org', 'p', 'pink', 'y']
 
   if trains.include? route
-    pred = TrainPrediction.new(stop, route)
-    train_xml_parser(pred.get_data).data
+    fetch_train_prediction(stop, route)
 
   else
-    pred = BusPrediction.new(stop, route)
-    bus_xml_parser(pred.get_data).data
+    fetch_bus_prediction(stop, route)
   end
 end
 
-class TripPredictions
-  attr_reader :preds
+def get_predictions_for_trip(route, depart_stop, arrive_stop)
+  departures = get_predictions_for_stop(route, depart_stop)
+  arrivals = get_predictions_for_stop(route, arrive_stop)
+  pair_by_vehicle(departures, arrivals)
+end
 
-  def initialize(route, depart_stop, end_stop)
-    @depart = make_prediction(route, depart_stop)
-    @arrive = make_prediction(route, end_stop)
-    @preds = make_trip_preds
+def pair_by_vehicle(departures, arrivals)
+  departures.reduce([]) do |pairs, departure|
+    arrival = arrivals.find { |arrival| arrival[:id] == departure[:id] }
+    pairs << { dep: departure, arr: arrival }
+  end
+end
+
+
+class IntersectingTripFinder
+  attr_reader :intersecting_trips
+
+  def initialize(first_trip_predictions, second_trip_predictions)
+    @first_trip_predictions = first_trip_predictions
+    @second_trip_predictions = second_trip_predictions
+    @intersecting_trips = find_intersecting_trips
+    filter_out_non_intersections!
+    get_trips_following_intersections!
   end
 
-  def make_trip_preds
-    @depart.reduce([]) do |pairs, dep_pred|
-      id = dep_pred[:id]
-      end_pred = @arrive.find { |prediction| prediction[:id] == id}
-      pairs << {dep: dep_pred, arr: end_pred}
+  def find_intersecting_trips
+    @first_trip_predictions.collect do |first_trip_prediction|
+      second_trip_prediction = find_intersecting_trip(first_trip_prediction, @second_trip_predictions)
+      {first_trip: first_trip_prediction, second_trip: second_trip_prediction}
+    end
+  end
+
+  def find_intersecting_trip(first_trip_prediction, second_trip_predictions)
+    second_trip_predictions.find do |second_trip_prediction|
+      second_trip_prediction[:dep][:predicted] > first_trip_prediction[:arr][:predicted]
+    end
+  end
+
+  def filter_out_non_intersections!
+    @intersecting_trips.reject! { |intersection| intersection[:second_trip].nil? }
+  end
+
+  def get_trips_following_intersections!
+    @intersecting_trips.each do |intersection|
+      second_trip_index = @second_trip_predictions.index(intersection[:second_trip])
+      following_trip = @second_trip_predictions[second_trip_index + 1]
+      intersection[:follow_up] = following_trip unless following_trip.nil?
+    end
+  end
+
+  def intersections
+    @intersecting_trips
+  end
+end
+
+
+class IntersectionsIntersectionsFinder
+
+  attr_reader :inter_ints
+  def initialize(intersections1, intersections2)
+    @ints1 = intersections1
+    @ints2 = intersections2
+    @inter_ints = find_intersections_intersections(@ints1, @ints2)
+  end
+
+  def find_intersections_intersections(intersections1, intersections2)
+    inter_intersections = intersections1.collect do |int1|
+      int2 = intersections2.find { |int2| int2[:trip1] == int1[:trip2] }
+      {int1: int1, int2: int2}
+    end
+  end
+
+  def filter_out_nil!
+    @inter_ints.reject! { |inter_int| inter_int.values.include? nil }
+  end
+
+  def format!
+    @inter_ints.collect! do |inter_int|
+      [inter_int[:int1][:trip1], inter_int[:int1][:trip2], inter_int[:int2][:trip2]]
     end
   end
 end
 
-class TripPredIntersections
-  attr_reader :intersections, :trip1_preds, :trip2_preds
-
-  def initialize(trip1_preds, trip2_preds)
-    @trip1_preds = trip1_preds
-    @trip2_preds = trip2_preds
-    @intersections = get_data
-  end
-
-  def get_data
-    @trip1_preds.collect do |pred|
-      intersection = get_intersection_data(pred)
-      intersection[:trip1] = pred
-      intersection
-    end
-  end
-
-  def get_intersection_data(pred)
-    intersection = find_intersection(pred, @trip2_preds)
-    next_index = @trip2_preds.index(intersection) + 1
-    following_trip = @trip2_preds.fetch(next_index, "none")
-    {trip2: intersection, trip2_next: following_trip}
-  end
-
-  def find_intersection(pred, trip_preds)
-    intersection = trip_preds.find do |trip_pred|
-      trip_pred[:dep][:predicted] > pred[:arr][:predicted]
-    end
-
-    intersection.nil? ? trip_preds[0] : intersection
-  end
-end
-
-class MultiIntersections
-
-  def initialize(int1, int2)
-    @int1 = int1
-    @int2 = int2
-  end
-
-  def find
-    @int2.intersections.find do |inter|
-      inter[:trip1] == @int1.intersections[0][:trip2]
-    end
-  end
-end
-
-class TripIntersections
-  attr_reader :super_int
-  def initialize(trip1, trip2, trip3)
-    @trip1 = trip1
-    @trip2 = trip2
-    @trip3 = trip3
-    get_predictions
-    get_first_intersection
-    get_second_intersection
-    @super_int = get_three_inter
-  end
-
-  def get_predictions
-    @trip1_pred = TripPredictions.new(*@trip1).preds
-    @trip2_pred = TripPredictions.new(*@trip2).preds
-    @trip3_pred = TripPredictions.new(*@trip3).preds
-  end
-
-  def get_first_intersection
-    @inter1 = TripPredIntersections.new(@trip1_pred, @trip2_pred).intersections
-  end
-
-  def get_second_intersection
-    @inter2 = TripPredIntersections.new(@trip2_pred, @trip3_pred).intersections
-  end
-
-  def get_three_inter
-    meet = @inter2.intersections.find do |inter|
-      inter[:trip1] == @inter1.intersections[0][:trip2]
-    end
-
-    @inter1.dup[:trip3] = meet
-  end
-end
 
 
-
-
-def dodo
-  trip1 = TripPredictions.new(50, '8816', '8819')
-  trip2 = TripPredictions.new(81, '3760', '3769')
-  trip3 = TripPredictions.new(36, '5347', '5363')
-end
-
-
-def preds
-
-  trip1 = TripPredictions.new(50, '8816', '8819')
-  trip2 = TripPredictions.new(81, '3760', '3769')
-  trip3 = TripPredictions.new(36, '5347', '5363')
-  [trip1, trip2, trip3]
-
-end
-
-def dodo2
-  # trip1 = [50, '8816', '8819']
-  # trip2 = [81, '3760', '3769']
-    # trip3 = [36, '5347', '5363']
-    # TripIntersections.new(trip1, trip2, trip3)
-
-
-  int1 = TripPredIntersections.new(trip1.preds, trip2.preds)
-  int2 = TripPredIntersections.new(trip2.preds, trip3.preds)
-
-  MultiIntersections.new(int1, int2)
+def test
+  trip1 = get_predictions_for_trip(50, '8816', '8819')
+  trip2 = get_predictions_for_trip(81, '3760', '3769')
+  trip3 = get_predictions_for_trip(36, '5347', '5363')
+  int1 = IntersectingTripFinder.new(trip1, trip2).intersections
+  int2 = IntersectingTripFinder.new(trip2, trip3).intersections
+  [trip1, trip2, trip3, int1, int2]
 end
 
 

@@ -65,16 +65,6 @@ class CTAXMLParser
 
 end
 
-def bus_xml_parser_f(xml_file)
-	xml = File.open(xml_file).readlines.join('')
-	bus_xml_parser(xml)
-end
-
-def train_xml_parser_f(xml_file)
-	xml = File.open(xml_file).readlines.join('')
-	train_xml_parser(xml)
-end
-
 def bus_xml_parser(xml)
 	
 	prediction_tag = 'prd'
@@ -90,7 +80,7 @@ def bus_xml_parser(xml)
 			 direction: 'rtdir',
 			 feet_left_to_stop: 'dstp',
 			}
-	CTAXMLParser.new(xml, prediction_tag, headings)
+	CTAXMLParser.new(xml, prediction_tag, headings).data
 end
 
 def train_xml_parser(xml)
@@ -114,5 +104,5 @@ def train_xml_parser(xml)
 			destination_name: "destNm",
 		}
 
-	CTAXMLParser.new(xml, prediction_tag, headings)
+	CTAXMLParser.new(xml, prediction_tag, headings).data
 end

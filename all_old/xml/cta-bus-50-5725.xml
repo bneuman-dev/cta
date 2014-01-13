@@ -1,0 +1,215 @@
+<?xml version="1.0"?>
+
+		<bustime-response>	
+			
+				<prd>
+					<tmstmp>20140102 17:08</tmstmp>
+					<typ>A</typ>
+					<stpnm>Damen &amp; Argyle</stpnm>
+					<stpid>8816</stpid>
+					<vid>1423</vid>
+					
+					 					
+					<dstp>1170</dstp>
+					<rt>50</rt>
+					<rtdir>Southbound</rtdir>
+		        	<des>35th/Archer Orange Line</des>
+		        	<prdtm>20140102 17:09</prdtm>
+		        	
+				</prd>			
+			
+				<prd>
+					<tmstmp>20140102 17:08</tmstmp>
+					<typ>A</typ>
+					<stpnm>Damen &amp; Eastwood (Brown Line)</stpnm>
+					<stpid>8819</stpid>
+					<vid>1423</vid>
+					
+					 					
+					<dstp>3507</dstp>
+					<rt>50</rt>
+					<rtdir>Southbound</rtdir>
+		        	<des>35th/Archer Orange Line</des>
+		        	<prdtm>20140102 17:13</prdtm>
+		        	
+				</prd>			
+			
+				<prd>
+					<tmstmp>20140102 17:07</tmstmp>
+					<typ>A</typ>
+					<stpnm>Clark &amp; Bryn Mawr</stpnm>
+					<stpid>1802</stpid>
+					<vid>1408</vid>
+					
+					 					
+					<dstp>1905</dstp>
+					<rt>50</rt>
+					<rtdir>Southbound</rtdir>
+		        	<des>35th/Archer Orange Line</des>
+		        	<prdtm>20140102 17:16</prdtm>
+		        	
+				</prd>			
+			
+				<prd>
+					<tmstmp>20140102 17:08</tmstmp>
+					<typ>A</typ>
+					<stpnm>Damen &amp; Belmont</stpnm>
+					<stpid>8942</stpid>
+					<vid>1409</vid>
+					
+					 					
+					<dstp>5259</dstp>
+					<rt>50</rt>
+					<rtdir>Northbound</rtdir>
+		        	<des>Ashland/Clark</des>
+		        	<prdtm>20140102 17:17</prdtm>
+		        	
+				</prd>			
+			
+				<prd>
+					<tmstmp>20140102 17:08</tmstmp>
+					<typ>A</typ>
+					<stpnm>Damen &amp; Belmont</stpnm>
+					<stpid>8942</stpid>
+					<vid>1316</vid>
+					
+					 					
+					<dstp>8137</dstp>
+					<rt>50</rt>
+					<rtdir>Northbound</rtdir>
+		        	<des>Ashland/Clark</des>
+		        	<prdtm>20140102 17:21</prdtm>
+		        	
+				</prd>			
+			
+				<prd>
+					<tmstmp>20140102 17:07</tmstmp>
+					<typ>A</typ>
+					<stpnm>Damen &amp; Argyle</stpnm>
+					<stpid>8816</stpid>
+					<vid>1408</vid>
+					
+					 					
+					<dstp>8747</dstp>
+					<rt>50</rt>
+					<rtdir>Southbound</rtdir>
+		        	<des>35th/Archer Orange Line</des>
+		        	<prdtm>20140102 17:24</prdtm>
+		        	
+				</prd>			
+			
+				<prd>
+					<tmstmp>20140102 17:08</tmstmp>
+					<typ>A</typ>
+					<stpnm>Damen &amp; Irving Park/Lincoln</stpnm>
+					<stpid>8951</stpid>
+					<vid>1409</vid>
+					
+					 					
+					<dstp>10802</dstp>
+					<rt>50</rt>
+					<rtdir>Northbound</rtdir>
+		        	<des>Ashland/Clark</des>
+		        	<prdtm>20140102 17:24</prdtm>
+		        	
+				</prd>			
+			
+				<prd>
+					<tmstmp>20140102 17:07</tmstmp>
+					<typ>A</typ>
+					<stpnm>Damen &amp; Eastwood (Brown Line)</stpnm>
+					<stpid>8819</stpid>
+					<vid>1408</vid>
+					
+					 					
+					<dstp>11084</dstp>
+					<rt>50</rt>
+					<rtdir>Southbound</rtdir>
+		        	<des>35th/Archer Orange Line</des>
+		        	<prdtm>20140102 17:27</prdtm>
+		        	
+				</prd>			
+			
+				<prd>
+					<tmstmp>20140102 17:08</tmstmp>
+					<typ>A</typ>
+					<stpnm>Damen &amp; Montrose</stpnm>
+					<stpid>8955</stpid>
+					<vid>1409</vid>
+					
+					 					
+					<dstp>13252</dstp>
+					<rt>50</rt>
+					<rtdir>Northbound</rtdir>
+		        	<des>Ashland/Clark</des>
+		        	<prdtm>20140102 17:27</prdtm>
+		        	
+				</prd>			
+			
+				<prd>
+					<tmstmp>20140102 17:08</tmstmp>
+					<typ>A</typ>
+					<stpnm>Damen &amp; Irving Park/Lincoln</stpnm>
+					<stpid>8951</stpid>
+					<vid>1316</vid>
+					
+					 					
+					<dstp>13680</dstp>
+					<rt>50</rt>
+					<rtdir>Northbound</rtdir>
+		        	<des>Ashland/Clark</des>
+		        	<prdtm>20140102 17:28</prdtm>
+		        	
+				</prd>			
+			
+				<prd>
+					<tmstmp>20140102 17:08</tmstmp>
+					<typ>A</typ>
+					<stpnm>Damen &amp; Eastwood (Brown Line)</stpnm>
+					<stpid>4954</stpid>
+					<vid>1409</vid>
+					
+					 					
+					<dstp>15080</dstp>
+					<rt>50</rt>
+					<rtdir>Northbound</rtdir>
+		        	<des>Ashland/Clark</des>
+		        	<prdtm>20140102 17:29</prdtm>
+		        	
+				</prd>			
+			
+				<prd>
+					<tmstmp>20140102 17:08</tmstmp>
+					<typ>A</typ>
+					<stpnm>Damen &amp; Montrose</stpnm>
+					<stpid>8955</stpid>
+					<vid>1316</vid>
+					
+					 					
+					<dstp>16130</dstp>
+					<rt>50</rt>
+					<rtdir>Northbound</rtdir>
+		        	<des>Ashland/Clark</des>
+		        	<prdtm>20140102 17:31</prdtm>
+		        	
+				</prd>			
+			
+				<prd>
+					<tmstmp>20140102 17:08</tmstmp>
+					<typ>A</typ>
+					<stpnm>Clark &amp; Bryn Mawr</stpnm>
+					<stpid>1802</stpid>
+					<vid>1900</vid>
+					
+					 					
+					<dstp>6310</dstp>
+					<rt>50</rt>
+					<rtdir>Southbound</rtdir>
+		        	<des>35th/Archer Orange Line</des>
+		        	<prdtm>20140102 17:32</prdtm>
+		        	
+				</prd>			
+
+		</bustime-response>
+
+		
