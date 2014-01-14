@@ -1,6 +1,6 @@
-require_relative 'cta.rb'
-require_relative 'xml_parser.rb'
-require_relative 'morning2.rb'
+require_relative 'cta'
+require_relative 'xml_parser'
+require_relative 'morning2'
 
 
 #My idea of what a 'prediction' or 'route' looks like is constrained by the CTA API. 
@@ -12,31 +12,6 @@ require_relative 'morning2.rb'
 
 include CTAFetcher
 
-def get_predictions_for_stop(route, stop)
-  trains = ['red', 'blue', 'brn', 'g', 'org', 'p', 'pink', 'y']
-
-  if trains.include? route
-    fetch_train_prediction(stop, route)
-
-  else
-    fetch_bus_prediction(stop, route)
-  end
-end
-
-def get_predictions_for_trip(route, depart_stop, arrive_stop)
-  departures = get_predictions_for_stop(route, depart_stop)
-  arrivals = get_predictions_for_stop(route, arrive_stop)
-  pair_by_vehicle(departures, arrivals)
-end
-
-def pair_by_vehicle(departures, arrivals)
-  departures.reduce([]) do |pairs, departure|
-    arrival = arrivals.find { |arrival| arrival[:id] == departure[:id] }
-    pairs << { dep: departure, arr: arrival }
-  end
-end
-
-
 class IntersectingTripFinder
   attr_reader :intersecting_trips
 
@@ -44,8 +19,8 @@ class IntersectingTripFinder
     @first_trip_predictions = first_trip_predictions
     @second_trip_predictions = second_trip_predictions
     @intersecting_trips = find_intersecting_trips
-    filter_out_non_intersections!
-    get_trips_following_intersections!
+    filter_out_non_intersections
+    get_trips_following_intersections
   end
 
   def find_intersecting_trips
@@ -61,11 +36,11 @@ class IntersectingTripFinder
     end
   end
 
-  def filter_out_non_intersections!
+  def filter_out_non_intersections
     @intersecting_trips.reject! { |intersection| intersection[:second_trip].nil? }
   end
 
-  def get_trips_following_intersections!
+  def get_trips_following_intersections
     @intersecting_trips.each do |intersection|
       second_trip_index = @second_trip_predictions.index(intersection[:second_trip])
       following_trip = @second_trip_predictions[second_trip_index + 1]
@@ -95,11 +70,11 @@ class IntersectionsIntersectionsFinder
     end
   end
 
-  def filter_out_nil!
+  def filter_out_nil
     @inter_ints.reject! { |inter_int| inter_int.values.include? nil }
   end
 
-  def format!
+  def format
     @inter_ints.collect! do |inter_int|
       [inter_int[:int1][:trip1], inter_int[:int1][:trip2], inter_int[:int2][:trip2]]
     end
